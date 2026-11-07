@@ -1,0 +1,30 @@
+#!/bin/sh
+# Rejects commit messages that break the project's commit rules.
+
+fail() {
+  echo "commit-msg: $1" >&2
+  exit 1
+}
+
+msg=$(grep -v '^#' "$1")
+subject=$(printf '%s\n' "$msg" | sed -n '1p')
+
+# Fix-up commits are folded away before merge, so they need no body.
+case "$subject" in
+  "fixup! "* | "squash! "* | "amend! "*) exit 0 ;;
+esac
+
+second=$(printf '%s\n' "$msg" | sed -n '2p')
+body=$(printf '%s\n' "$msg" | sed -n '3,$p' | grep -v '^[[:space:]]*$')
+
+[ -n "$subject" ] || fail "the subject line is empty"
+[ "${#subject}" -le 72 ] || fail "the subject line is longer than 72 characters"
+case "$subject" in *.) fail "the subject line ends with a period" ;; esac
+[ -z "$second" ] || fail "the second line must be blank"
+[ -n "$body" ] || fail "the body is missing: explain how the change works and why"
+
+if printf '%s\n' "$msg" | grep -Eiq '^(co-authored-by|signed-off-by):|generated (with|by) |noreply@anthropic\.com|🤖'; then
+  fail "remove AI references, signatures and co-author trailers"
+fi
+
+exit 0
