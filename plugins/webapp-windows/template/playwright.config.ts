@@ -14,6 +14,8 @@ export default defineConfig({
 	webServer: {
 		command: `pnpm build && pnpm preview --port ${port} --strictPort`,
 		port,
-		reuseExistingServer: false
+		reuseExistingServer: false,
+		// The server starts after a full build, which is slow on the Windows filesystem.
+		timeout: 300_000
 	}
 });

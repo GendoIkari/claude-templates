@@ -1,14 +1,14 @@
-# webapp
+# webapp-windows
 
 Stack template for SvelteKit web apps. It builds on `coding-base-windows` (environment, layers, quality gates, reviewers) and `gitflow` (one worktree per feature, fast-forward-only `master`), which it declares as dependencies.
 
 ## Install
 
 ```
-/plugin install webapp --marketplace GendoIkari/claude-templates
+/plugin install webapp-windows --marketplace GendoIkari/claude-templates
 /coding-base-windows:setup
 /gitflow:setup
-/webapp:setup
+/webapp-windows:setup
 ```
 
 In a project without `package.json`, `setup` scaffolds the app with `sv` and applies the template. In an existing app it only installs the rules and reports how the app differs from the template.
@@ -27,8 +27,8 @@ SvelteKit with Svelte 5 runes and TypeScript, Tailwind CSS 4, adapter-node, pnpm
 | `rules/testing.md` | Which kind of test covers which layer |
 | `rules/error-handling.md` | `Result` values for expected failures, thrown errors for bugs |
 | `agents/design-reviewer.md` | Checks a change against the design system, in code and in story screenshots |
-| `/webapp:setup` | Installs the rules and scaffolds the app |
-| `/webapp:design-review` | Runs the design reviewer on demand |
+| `/webapp-windows:setup` | Installs the rules and scaffolds the app |
+| `/webapp-windows:design-review` | Runs the design reviewer on demand |
 | `setup/scaffold.sh` | Creates the app with `sv` and applies `template/` |
 | `template/` | Theme, reference component and view with stories and tests, error page, ESLint design rules, Playwright and Storybook configuration, screenshot script |
 

@@ -15,5 +15,7 @@
 	{#if page.error?.message}
 		<p class="text-fg-muted">{page.error.message}</p>
 	{/if}
-	<a class="font-medium text-accent hover:text-accent-hover" href={resolve('/')}>Back to the home page</a>
+	<a class="font-medium text-accent hover:text-accent-hover" href={resolve('/')}
+		>Back to the home page</a
+	>
 </main>

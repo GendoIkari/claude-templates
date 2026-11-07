@@ -1,5 +1,5 @@
 {
-  "name": "webapp",
+  "name": "webapp-windows",
   "version": "0.1.0",
   "description": "Stack template for SvelteKit web apps: Tailwind design system driven by a theme folder, reusable components and views, Vitest and Playwright tests, Storybook catalog and a design reviewer.",
   "author": { "name": "Gendo Ikari" },

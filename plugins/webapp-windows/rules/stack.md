@@ -4,6 +4,7 @@ This project is a SvelteKit app written in TypeScript, styled with Tailwind CSS 
 
 - Svelte 5 runes only (`$state`, `$derived`, `$props`, `$effect`). No legacy `export let`, `$:` or stores for new code.
 - SvelteKit configuration lives in `vite.config.ts` (there is no `svelte.config.js`).
+- Import from `src/lib` with `#lib/...` (declared in `package.json` `imports`). SvelteKit 3 removed the `$lib` alias, so `$lib` imports fail the build.
 - Every command runs in WSL with pnpm, never npm or yarn. Add dependencies with `pnpm add` / `pnpm add -D` and commit `pnpm-lock.yaml`.
 
 ## Commands

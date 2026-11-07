@@ -16,4 +16,4 @@
 
 ## Design review
 
-Before running `gitflow:finish-feature` on a feature that changes anything under `src/lib/theme/`, `src/lib/components/`, `src/lib/views/` or a `.svelte` file in `src/routes/`, launch the `webapp:design-reviewer` agent, in parallel with the base reviewers. Give it the working directory (as a Windows path), the scope of the change and a one-line summary of its intent. Fix every finding you agree with, explain to the user any you reject, and run `pnpm gates` again before merging.
+Before running `gitflow:finish-feature` on a feature that changes anything under `src/lib/theme/`, `src/lib/components/`, `src/lib/views/` or a `.svelte` file in `src/routes/`, launch the `webapp-windows:design-reviewer` agent, in parallel with the base reviewers. Give it the working directory (as a Windows path), the scope of the change and a one-line summary of its intent. Fix every finding you agree with, explain to the user any you reject, and run `pnpm gates` again before merging.

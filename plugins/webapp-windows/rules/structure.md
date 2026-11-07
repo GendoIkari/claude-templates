@@ -7,12 +7,12 @@ The base architecture rule (models / business logic / io / systems) maps onto Sv
 | `src/lib/models/` | Types and their validation (`invoice.ts`, `result.ts`) | models |
 | `src/lib/business-logic/` | Pure functions (`invoice-totals.ts`) | models |
 | `src/lib/io/` | Browser-safe I/O: calls to the app's own API, browser storage | models |
-| `src/lib/server/io/` | Server-only I/O: database, files, secrets, external services. SvelteKit refuses to bundle `$lib/server` into client code | models |
+| `src/lib/server/io/` | Server-only I/O: database, files, secrets, external services. SvelteKit refuses to bundle anything under `src/lib/server/` into client code | models |
 | `src/lib/systems/` | State and wiring: rune classes in `*.svelte.ts` for client state, server services that combine business logic and I/O | models, business-logic, io, server/io (server only) |
 | `src/lib/theme/` | Design tokens (`theme.css`). See the design-system rule | nothing |
 | `src/lib/components/` | Design-system components | models, other components |
 | `src/lib/views/` | One view per page: the page's whole content | models, components |
-| `src/routes/` | SvelteKit routes: load functions, form actions, API endpoints and thin pages | everything in `$lib` |
+| `src/routes/` | SvelteKit routes: load functions, form actions, API endpoints and thin pages | everything in `#lib` |
 | `e2e/` | Playwright tests of user flows | nothing from `src/` |
 
 ## Components

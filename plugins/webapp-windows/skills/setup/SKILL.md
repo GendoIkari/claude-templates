@@ -7,7 +7,7 @@ disable-model-invocation: true
 Set up the web app stack in the current project. `<root>` is `${CLAUDE_PROJECT_DIR}`, which must be the main checkout on `master`, not a worktree. Run every command in WSL as the environment rules describe; scaffolding downloads packages and takes a few minutes, so run it in the background.
 
 1. Check that `<root>/.claude/rules/coding-base-windows/` and `<root>/.claude/rules/gitflow/` exist. If one is missing, stop and tell the user to run `/coding-base-windows:setup` and `/gitflow:setup` first.
-2. Copy every file in `${CLAUDE_PLUGIN_ROOT}/rules/` to `<root>/.claude/rules/webapp/`, replacing files with the same name. Do not touch any other folder under `.claude/rules/`. If `.claude/rules/webapp/` holds files that are no longer in the plugin, list them and ask the user before removing them.
+2. Copy every file in `${CLAUDE_PLUGIN_ROOT}/rules/` to `<root>/.claude/rules/webapp-windows/`, replacing files with the same name. Do not touch any other folder under `.claude/rules/`. If `.claude/rules/webapp-windows/` holds files that are no longer in the plugin, list them and ask the user before removing them.
 3. Check the toolchain in WSL: `node --version` must be 22 or later (if not, tell the user to install it with nvm); if `pnpm` is missing, run `corepack enable pnpm`.
 4. If `<root>/package.json` does not exist, scaffold the app:
    `bash "<plugin root as a WSL path>/setup/scaffold.sh" "<root as a WSL path>" "<plugin root as a WSL path>"`

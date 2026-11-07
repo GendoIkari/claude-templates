@@ -5,7 +5,7 @@
 	tests without the route, its load function or a server.
 -->
 <script lang="ts">
-	import Button from '$lib/components/Button.svelte';
+	import Button from '#lib/components/Button.svelte';
 
 	type Props = {
 		appName: string;
