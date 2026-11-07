@@ -14,7 +14,7 @@ A Claude Code plugin marketplace of composable project templates. Each template 
 In a Claude Code session:
 
 ```
-/plugin marketplace add <github-owner>/claude-templates
+/plugin marketplace add GendoIkari/claude-templates
 /plugin install coding-base-windows@claude-templates
 /coding-base-windows:setup
 ```

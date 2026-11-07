@@ -2,6 +2,15 @@
 
 Base template for projects developed on Windows, where Claude Code runs as a Windows program and all development tooling runs in WSL. Stack templates (one per language or framework) depend on this plugin and add their own rules.
 
+## Install
+
+```
+/plugin install coding-base-windows --marketplace GendoIkari/claude-templates
+/coding-base-windows:setup
+```
+
+`setup` copies the rules and sets local git options (`core.autocrlf false`, `core.filemode false`), so run it again in every new clone.
+
 ## Contents
 
 | Component | Purpose |
@@ -14,8 +23,8 @@ Base template for projects developed on Windows, where Claude Code runs as a Win
 | `rules/error-handling.md` | One error-handling approach, defined by the stack template |
 | `agents/simplicity-reviewer.md` | Simplicity, redundancy, dead code, layering, useless tests |
 | `agents/correctness-reviewer.md` | Bugs, corner cases, error handling, security |
-| `/coding-base-windows:setup` | Copies the rules into the project's `.claude/rules/coding-base-windows/` |
-| `/coding-base-windows:review` | Runs both reviewers in parallel and merges their findings |
+| `/coding-base-windows:setup` | Copies the rules into the project's `.claude/rules/coding-base-windows/`, enforces LF line endings |
+| `/coding-base-windows:review` | Runs both reviewers in parallel and lets the user pick what to fix (the agent itself launches the reviewers directly, as `quality-gates.md` says) |
 
 ## Why rules are copied
 
@@ -28,4 +37,5 @@ Plugins cannot ship `CLAUDE.md` or `.claude/rules/`, so the `setup` skill copies
 - The error-handling approach
 - Build targets (Linux, Windows or both) and their toolchains
 - The command that builds the runnable app, run in the main checkout after every merge
+- `.gitignore` entries for every build and tool output, so the main checkout stays clean after a build
 - How to prepare a fresh worktree (for example installing dependencies)
