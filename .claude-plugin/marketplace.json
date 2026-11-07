@@ -1,0 +1,19 @@
+{
+  "name": "claude-templates",
+  "owner": {
+    "name": "Gendo Ikari"
+  },
+  "description": "Composable Claude Code project templates: rules, skills and agents.",
+  "plugins": [
+    {
+      "name": "coding-base-windows",
+      "source": "./plugins/coding-base-windows",
+      "description": "Base coding rules and reviewers for projects developed on Windows with tooling in WSL."
+    },
+    {
+      "name": "gitflow",
+      "source": "./plugins/gitflow",
+      "description": "Worktree-based feature-branch workflow with fast-forward-only master and AI-free commit messages."
+    }
+  ]
+}
