@@ -8,7 +8,8 @@
   - The shell must be interactive and login (`-ilc`), so it runs the same startup scripts as a manually opened Ubuntu terminal: version managers, PATH entries and the SSH agent that git needs to reach remotes.
   - Warnings such as `cannot set terminal process group` or `no job control in this shell` are expected and harmless.
   - If git cannot authenticate to a remote, stop and tell the user. Do not try other credentials or transports.
-  - From Git Bash, prefix the call with `MSYS_NO_PATHCONV=1` so Unix paths inside the command are not rewritten.
+  - The call must never wait for input. A login script may prompt (for example for a keyring password) and would hang a call attached to a terminal. The PowerShell tool already gives commands no input. From Git Bash, append `< /dev/null` to the `wsl.exe` call, and prefix it with `MSYS_NO_PATHCONV=1` so Unix paths inside the command are not rewritten.
+  - If a WSL call prints nothing for a long time, stop it and tell the user. Do not retry it the same way.
 - Inside WSL the project is under `/mnt/<drive>/...`. Use those paths inside WSL commands and Windows paths with Claude's file tools and tools such as EnterWorktree. Convert a path printed by a WSL command with `wslpath -w '<path>'`, and the other way with `wslpath -u '<path>'`.
 - Build artifacts may target Linux, Windows, or both. Build every target from WSL with the toolchain the stack template specifies (for example a cross-compilation target), unless the stack template says otherwise.
 - Files use LF line endings (`.gitattributes` holds `* text=auto eol=lf`), and git ignores file modes (`core.autocrlf false`, `core.filemode false`). Never introduce CRLF.
