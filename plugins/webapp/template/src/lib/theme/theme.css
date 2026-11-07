@@ -1,0 +1,96 @@
+/*
+ * Design tokens: the only source of colors, fonts, radii and shadows in the app.
+ *
+ * Tailwind generates a utility for every token (bg-surface, text-fg-muted,
+ * border-border, rounded-control, shadow-raised, font-sans, ...). Components,
+ * views and pages style themselves only with those utilities and with
+ * Tailwind's own spacing, sizing and type scales.
+ *
+ * The `initial` resets remove Tailwind's default palette, radii and shadows,
+ * so a class such as bg-blue-500 does not exist and the linter rejects it.
+ *
+ * Light values live in @theme. Dark values override the same variables below,
+ * so every color token must be defined in both places.
+ */
+
+@theme {
+	--color-*: initial;
+	--radius-*: initial;
+	--shadow-*: initial;
+	--font-*: initial;
+
+	--font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+	--font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+	/* Backgrounds */
+	--color-canvas: oklch(98.5% 0.003 250);
+	--color-surface: oklch(100% 0 0);
+	--color-surface-sunken: oklch(96% 0.005 250);
+
+	/* Text */
+	--color-fg: oklch(22% 0.02 260);
+	--color-fg-muted: oklch(46% 0.02 260);
+	--color-fg-on-accent: oklch(99% 0 0);
+
+	/* Lines */
+	--color-border: oklch(89% 0.008 250);
+	--color-focus: oklch(60% 0.19 260);
+
+	/* Intent */
+	--color-accent: oklch(52% 0.19 260);
+	--color-accent-hover: oklch(46% 0.19 260);
+	--color-danger: oklch(53% 0.2 25);
+	--color-danger-hover: oklch(47% 0.2 25);
+	--color-danger-subtle: oklch(95% 0.03 25);
+	--color-success: oklch(52% 0.13 150);
+	--color-success-subtle: oklch(95% 0.04 150);
+	--color-warning: oklch(62% 0.14 70);
+	--color-warning-subtle: oklch(96% 0.05 85);
+
+	/* Shapes */
+	--radius-control: 0.5rem;
+	--radius-card: 0.75rem;
+	--radius-pill: 9999px;
+
+	--shadow-raised: 0 1px 2px oklch(0% 0 0 / 0.06), 0 1px 3px oklch(0% 0 0 / 0.1);
+	--shadow-overlay: 0 8px 24px oklch(0% 0 0 / 0.16);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-canvas: oklch(17% 0.01 260);
+		--color-surface: oklch(21% 0.012 260);
+		--color-surface-sunken: oklch(15% 0.01 260);
+
+		--color-fg: oklch(95% 0.005 260);
+		--color-fg-muted: oklch(72% 0.015 260);
+		--color-fg-on-accent: oklch(99% 0 0);
+
+		--color-border: oklch(32% 0.015 260);
+		--color-focus: oklch(70% 0.16 260);
+
+		--color-accent: oklch(62% 0.18 260);
+		--color-accent-hover: oklch(68% 0.17 260);
+		--color-danger: oklch(62% 0.19 25);
+		--color-danger-hover: oklch(68% 0.18 25);
+		--color-danger-subtle: oklch(28% 0.06 25);
+		--color-success: oklch(66% 0.14 150);
+		--color-success-subtle: oklch(27% 0.05 150);
+		--color-warning: oklch(76% 0.14 75);
+		--color-warning-subtle: oklch(29% 0.05 75);
+	}
+}
+
+@layer base {
+	html {
+		color-scheme: light dark;
+		background-color: var(--color-canvas);
+		color: var(--color-fg);
+		font-family: var(--font-sans);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-focus);
+		outline-offset: 2px;
+	}
+}

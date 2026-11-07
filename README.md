@@ -8,6 +8,7 @@ A Claude Code plugin marketplace of composable project templates. Each template 
 | --- | --- |
 | `coding-base-windows` | Base rules and reviewers for projects developed on Windows with tooling in WSL |
 | `gitflow` | Worktree-based feature-branch workflow with fast-forward-only `master` and AI-free commits |
+| `webapp` | SvelteKit stack with a theme-driven Tailwind design system, Storybook, Vitest, Playwright and a design reviewer; depends on the two above |
 
 ## Use
 

@@ -14,6 +14,11 @@
       "name": "gitflow",
       "source": "./plugins/gitflow",
       "description": "Worktree-based feature-branch workflow with fast-forward-only master and AI-free commit messages."
+    },
+    {
+      "name": "webapp",
+      "source": "./plugins/webapp",
+      "description": "SvelteKit web app stack: Tailwind design system driven by a theme folder, reusable components and views, Vitest and Playwright tests, Storybook and a design reviewer."
     }
   ]
 }
