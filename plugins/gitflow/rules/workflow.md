@@ -9,5 +9,5 @@
 - One task, one branch, one worktree. Other worktrees under `.claude/worktrees/` may belong to agents working right now: never work in them or remove them, unless the user asks you to continue that feature.
 - `master` history is linear: fast-forward merges only, no merge commits, never force-push `master`.
 - Run git the way the project's environment rules require, in the session's working directory: the feature worktree while a feature is in progress.
-- Worktrees record relative paths (`worktree.useRelativePaths true`), because more than one git client reads the repository (for example git in WSL and Claude Code's own git on Windows). Every one of those clients must be git 2.48 or later: an older git refuses to open a repository that uses relative worktrees.
+- A worktree records the absolute path of the repository in the form of the git that created it. When the project's environment rules run git in WSL, worktrees get `/mnt/c/...` paths that a Windows git cannot resolve: create, use and remove worktrees only with git in WSL, and never open a worktree with a Windows git tool (IDE source control, Git for Windows). The main checkout is not affected.
 - Git takes lock files in the shared repository. If a git command fails because a `.lock` file exists, another agent is running git: wait a few seconds and retry. Never delete a lock file.
