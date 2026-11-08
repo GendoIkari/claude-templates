@@ -28,3 +28,7 @@ Install the plugin with project scope so it is recorded in the project's `.claud
 .claude-plugin/marketplace.json   marketplace definition
 plugins/<plugin-name>/            one directory per template
 ```
+
+## License
+
+GPL-2.0-only. See [LICENSE](LICENSE).
