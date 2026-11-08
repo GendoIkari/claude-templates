@@ -1,6 +1,6 @@
 {
   "name": "gitflow",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Worktree-based feature-branch workflow: one worktree per task, linear fast-forward-only master, AI-free commit messages.",
   "author": { "name": "Gendo Ikari" },
   "license": "GPL-2.0-only"
