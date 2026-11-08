@@ -11,7 +11,7 @@ This project is a SvelteKit app written in TypeScript, styled with Tailwind CSS 
 
 | Purpose | Command |
 | --- | --- |
-| All quality gates | `pnpm gates` (format check, ESLint, svelte-check, Vitest, Playwright) |
+| All quality gates | `pnpm gates` (format check, ESLint, svelte-check, Vitest, Playwright), run on an ext4 copy with preparation command `pnpm install --frozen-lockfile --prefer-offline`, as the quality-gate rules describe |
 | Fix formatting | `pnpm format` |
 | Dev server | `pnpm dev` |
 | Design catalog | `pnpm storybook` |
@@ -21,7 +21,7 @@ This project is a SvelteKit app written in TypeScript, styled with Tailwind CSS 
 
 ## Worktrees and builds
 
-- Prepare a fresh worktree with `pnpm install --frozen-lockfile`. Playwright's Chromium is installed once per machine; if a browser test cannot launch it, run `pnpm exec playwright install chromium` and, when system libraries are missing, ask the user to run `sudo pnpm exec playwright install-deps chromium`.
+- The quality gates need no `node_modules` in the worktree: their ext4 copy installs its own. Run `pnpm install --frozen-lockfile` in a fresh worktree only before running commands there directly (`pnpm format`, dev server, Storybook, story screenshots). Playwright's Chromium is installed once per machine; if a browser test cannot launch it, run `pnpm exec playwright install chromium` and, when system libraries are missing, ask the user to run `sudo pnpm exec playwright install-deps chromium`.
 - The build command run in the main checkout after every merge is `pnpm install --frozen-lockfile && pnpm build`.
 - The only build target is Node on Linux. There is no Windows build.
 - Everything the tools generate (`build/`, `.svelte-kit/`, `storybook-static/`, `.design-review/`, `test-results/`, `playwright-report/`, `__screenshots__/`) is in `.gitignore`. Add new tool outputs there too.

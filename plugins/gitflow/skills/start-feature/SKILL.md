@@ -14,5 +14,5 @@ Prepare an isolated workspace for the task. Do not rely on earlier conversation;
 6. Choose a short kebab-case name that describes the task, or use `$ARGUMENTS` if given. Check that neither the branch `feature/<name>` nor the directory `<root>/.claude/worktrees/<name>` exists; if one does, choose another name.
 7. Create the worktree: `git -C <root> worktree add .claude/worktrees/<name> -b feature/<name> master`.
 8. Move into it with the EnterWorktree tool, passing `path` (never `name`, which would create a different worktree) set to the Windows path of `<root>/.claude/worktrees/<name>`. If that tool is not available, make every edit and run every command under that path from now on.
-9. Prepare the worktree the way the stack template describes, for example by installing dependencies, so the quality gates can run there.
+9. If the stack template says how to prepare a new worktree (for example by installing dependencies), do it now.
 10. Tell the user the branch name and worktree path in one line.

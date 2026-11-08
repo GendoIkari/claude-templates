@@ -38,5 +38,5 @@ SvelteKit with Svelte 5 runes and TypeScript, Tailwind CSS 4, adapter-node, pnpm
 
 ## Known limits
 
-- Projects live on the Windows filesystem (`/mnt/c`), where Node tooling in WSL reads files slowly: linting and type checking take minutes rather than seconds.
+- Projects live on the Windows filesystem (`/mnt/c`), where Node tooling in WSL reads files slowly. The quality gates avoid it by running on an ext4 copy (see `coding-base-windows`), but the dev server, Storybook and the story screenshots still run in place and stay slow.
 - The scaffold pins `sv` 1.3.0; the packages it installs follow their latest versions.

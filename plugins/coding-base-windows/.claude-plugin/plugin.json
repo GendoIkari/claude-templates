@@ -1,6 +1,6 @@
 {
   "name": "coding-base-windows",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Base coding rules and reviewers for projects developed on Windows with tooling in WSL. Stack templates build on top of it.",
   "author": {
     "name": "Gendo Ikari"
