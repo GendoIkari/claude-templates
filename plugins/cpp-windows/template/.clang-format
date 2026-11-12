@@ -1,0 +1,18 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 110
+PointerAlignment: Left
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: Inline
+BreakTemplateDeclarations: Yes
+IncludeBlocks: Regroup
+IncludeCategories:
+  # The file's own header first, then project headers, then libraries, then the standard library.
+  - Regex: '^"'
+    Priority: 1
+  - Regex: '^<[a-z_]+>$'
+    Priority: 3
+  - Regex: '^<'
+    Priority: 2
+InsertNewlineAtEOF: true

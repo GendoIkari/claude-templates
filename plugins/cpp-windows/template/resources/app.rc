@@ -1,0 +1,2 @@
+// Embeds the application manifest (resource type 24 is RT_MANIFEST).
+1 24 "app.manifest"

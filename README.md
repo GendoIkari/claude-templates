@@ -9,6 +9,7 @@ A Claude Code plugin marketplace of composable project templates. Each template 
 | `coding-base-windows` | Base rules and reviewers for projects developed on Windows with tooling in WSL |
 | `gitflow` | Worktree-based feature-branch workflow with fast-forward-only `master` and AI-free commits |
 | `webapp-windows` | SvelteKit stack with a theme-driven Tailwind design system, Storybook, Vitest, Playwright and a design reviewer; depends on the two above |
+| `cpp-windows` | C++26 stack for Windows apps: CMake, cross-compiled in WSL with llvm-mingw, static executables, FetchContent dependencies, clang-tidy and Catch2; depends on the first two |
 
 ## Use
 

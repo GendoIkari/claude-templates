@@ -19,6 +19,11 @@
       "name": "webapp-windows",
       "source": "./plugins/webapp-windows",
       "description": "SvelteKit web app stack: Tailwind design system driven by a theme folder, reusable components and views, Vitest and Playwright tests, Storybook and a design reviewer."
+    },
+    {
+      "name": "cpp-windows",
+      "source": "./plugins/cpp-windows",
+      "description": "C++26 Windows app stack: CMake presets, cross-compiled in WSL with a pinned llvm-mingw, static self-contained executables, FetchContent dependencies, clang-format, clang-tidy and Catch2."
     }
   ]
 }

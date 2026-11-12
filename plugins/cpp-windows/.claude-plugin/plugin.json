@@ -1,0 +1,8 @@
+{
+  "name": "cpp-windows",
+  "version": "0.1.0",
+  "description": "Stack template for C++26 Windows apps: CMake with presets, cross-compiled in WSL with a pinned llvm-mingw, static self-contained executables, dependencies through FetchContent, clang-format, clang-tidy and Catch2.",
+  "author": { "name": "Gendo Ikari" },
+  "license": "GPL-2.0-only",
+  "dependencies": ["coding-base-windows", "gitflow"]
+}
